@@ -1,0 +1,14 @@
+/* Simple styles for AI Image Generator */
+body { font-family: Inter, system-ui, Arial, sans-serif; background:#f6f8fa; color:#111; margin:0; }
+.container { max-width:760px; margin:40px auto; padding:24px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(20,20,30,0.06); }
+h1 { margin:0 0 16px 0; font-size:24px; }
+.form { display:flex; flex-direction:column; gap:12px; }
+.form input { padding:12px; font-size:14px; border:1px solid #e6e9ee; border-radius:8px; }
+.controls { display:flex; gap:8px; align-items:center; }
+.controls select { padding:10px; border-radius:8px; border:1px solid #e6e9ee; }
+.controls button { padding:10px 14px; background:#0b5cff; color:#fff; border:none; border-radius:8px; cursor:pointer; }
+.controls button:disabled { opacity:0.6; cursor:not-allowed; }
+.preview { margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; }
+.preview img { max-width:100%; width:320px; border-radius:8px; border:1px solid #e9eef6; box-shadow:0 4px 10px rgba(20,20,30,0.04); }
+.note { color:#6b7280; margin-top:12px; font-size:13px; }
+#status { margin-top:12px; color:#1f2937; font-size:14px; }
