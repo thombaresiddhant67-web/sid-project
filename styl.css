@@ -1,14 +1,70 @@
-/* Simple styles for AI Image Generator */
-body { font-family: Inter, system-ui, Arial, sans-serif; background:#f6f8fa; color:#111; margin:0; }
-.container { max-width:760px; margin:40px auto; padding:24px; background:#fff; border-radius:10px; box-shadow:0 6px 18px rgba(20,20,30,0.06); }
-h1 { margin:0 0 16px 0; font-size:24px; }
-.form { display:flex; flex-direction:column; gap:12px; }
-.form input { padding:12px; font-size:14px; border:1px solid #e6e9ee; border-radius:8px; }
-.controls { display:flex; gap:8px; align-items:center; }
-.controls select { padding:10px; border-radius:8px; border:1px solid #e6e9ee; }
-.controls button { padding:10px 14px; background:#0b5cff; color:#fff; border:none; border-radius:8px; cursor:pointer; }
-.controls button:disabled { opacity:0.6; cursor:not-allowed; }
-.preview { margin-top:16px; display:flex; gap:12px; flex-wrap:wrap; }
-.preview img { max-width:100%; width:320px; border-radius:8px; border:1px solid #e9eef6; box-shadow:0 4px 10px rgba(20,20,30,0.04); }
-.note { color:#6b7280; margin-top:12px; font-size:13px; }
-#status { margin-top:12px; color:#1f2937; font-size:14px; }
+/* Mobile-first responsive styles for Simple AI Image Generator */
+:root{
+  --bg: #f4f4f4;
+  --card: thistle;
+  --accent: #6a5acd;
+  --radius: 10px;
+  --gap: 12px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  padding:20px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:clamp(14px, 2.5vw, 18px);
+}
+.container{
+  width:min(95%,420px);
+  background:var(--card);
+  padding:clamp(14px, 3vw, 22px);
+  border-radius:var(--radius);
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+.container h3{margin:0 0 10px 0; font-size:clamp(1rem, 3vw, 1.25rem)}
+input[type="text"]{
+  width:100%;
+  padding:10px;
+  margin-bottom:var(--gap);
+  border:1px solid rgba(0,0,0,0.12);
+  border-radius:6px;
+  font-size:1rem;
+}
+button{
+  padding:10px 16px;
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+  background:var(--accent);
+  color:#fff;
+  font-weight:600;
+  width:100%;
+}
+button:active{transform:translateY(1px)}
+img#result{
+  margin-top:15px;
+  max-width:100%;
+  height:auto;
+  border-radius:8px;
+  display:none;
+}
+/* Larger screens: allow button to sit next to input */
+@media (min-width:480px){
+  .container{width:320px}
+  button{width:auto}
+  .row{display:flex; gap:10px}
+  .row input{flex:1}
+}
+/* Accessibility and touch targets */
+input:focus, button:focus{outline:3px solid rgba(106,90,205,0.18); outline-offset:2px}
+
+/* Small enhancements for landscape/smaller phones */
+@media (max-height:500px){
+  .container{padding:12px}
+  body{padding:12px}
+}
